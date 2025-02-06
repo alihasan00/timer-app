@@ -2,58 +2,44 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.4.
 
-## Development server
+## Development Server
 
 To start a local development server, run:
+
+```bash
+npm start
+```
+
+Alternatively, you can use:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+**Note:** `ng serve` will only run the Angular frontend and not the backend API.
 
-## Code scaffolding
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any source files.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Timer Display Types
 
-```bash
-ng generate component component-name
-```
+By default, the timer displays time in seconds.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+![Alt text](public/seconds.png)
 
-```bash
-ng generate --help
-```
+### Switching to Year:Month:Day:Hour:Minutes:Seconds Format
 
-## Building
+To enable the extended time format, follow these steps:
 
-To build the project run:
+1. **Uncomment** the following line in the timer component:
+   - [Seconds Format Code](https://github.com/alihasan00/timer-app/blob/abef65e8191058e030072cd9619848cc079b6999/src/app/components/timer/timer/timer.component.ts#L25)
 
-```bash
-ng build
-```
+   ![Alt text](public/format.png)
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+2. **Comment out** the following line to disable the default seconds-only display:
+   - [Yearly Format Code](https://github.com/alihasan00/timer-app/blob/abef65e8191058e030072cd9619848cc079b6999/src/app/components/timer/timer/timer.component.ts#L28)
 
-## Running unit tests
+This will switch the timer to display time in `YYYY:MM:DD:HH:MM:SS` format.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+---
 
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+For any issues or contributions, feel free to submit a pull request or open an issue in the repository.
